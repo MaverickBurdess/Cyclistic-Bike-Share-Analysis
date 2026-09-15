@@ -43,11 +43,11 @@ I Used SQL within BigQuery for my analysis, saving any important queries as new 
 5. Monthly trends show that the majority of rides for both types of riders take place during the warmer summer months. Colder months see rides drop off significantly with the remaining majority of riders being annual members.
 
 ## Key Findings
-- Annual members account for 64.75% of rides, compared to 35.25% for casual riders.
-- Casual riders prefer longer rides with a median of 11 minutes, compared to 8 minutes for annual members.
-- Weekdays are more popular with annual members while weekends are more popular with casual riders.
-- Weekday usage aligns with the beginning and end of the work day.
-- Warmer months are when the majority of rides take place.
+- The majority of rides are form members. Annual members account for 64.75% of rides, compared to 35.25% for casual riders.
+- Casual riders prefer longer rides than members. Casual rides have a median of 11 minutes, compared to 8 minutes for annual members.
+- Ride behavior differs day to day. Weekdays are more popular with annual members while weekends are more popular with casual riders.
+- A large demographic of users commute with the service. Weekday usage aligns with the beginning and end of the work day.
+- Seasonality is important. Warmer months are when the majority of rides take place.
 
 ## Recommendations
 - Have a promotion for casual riders using the service on Fridays, Saturdays, and Sundays. Incentivize reoccurring rides by offering free day-passes or trials for memberships. Emphasize the annual savings and physical health benefits of an annual membership.
