@@ -35,6 +35,7 @@ For my last cleaning step, I removed potential errors for trip durations. I opte
 I Used SQL within BigQuery for my analysis, saving any important queries as new tables as I went along. For visualizations, I used Tableau connected to my BigQuery database.
 
 1. The majority of rides were conducted by annual members accounting for 64.75% of total rides. This is likely indicative of members riding more frequently than their casual counterparts.
+![Total Riders Chart](images/Total Rides by Rider Type)
 2. Casual riders tend to have longer rides with an average of 18.79 and a median of 11 minutes respectively. Members have an average of 11.82 and median of 8 minutes.
 3. Hourly trends show member rides prominently between 6 and 9 a.m. and 3 and 6 p.m. suggesting that they are using bikes for commuting to work. Casual riders show similar trends with an increase at the start of the work day gradually increasing until the end of the work day.
 4. Weekly trends show an interesting inversion of trends between members and casuals. Member usage is predominantly weekdays while used the least during weekends. Casuals however, are mainly weekend riders with a lower amount of trips during the weekday.
