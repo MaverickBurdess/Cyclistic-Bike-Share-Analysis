@@ -1,5 +1,7 @@
 # Cyclistic-Bike-Share-Analysis
 
+---
+
 ## Project Overview
 Cyclistic is a fictional bike-share company operating in Chicago. They offer flexible single-ride passes and full-day passes for casual riders and annual memberships for Cyclistic members.
 
@@ -7,17 +9,23 @@ The goal of this analysis is to identify the differences between casual riders a
 
 The subset of data I have chosen to work with contains trip data from July 2025 to June 2026, representing one full year of rider activity.
 
+---
+
 ## Business Task
 Key Question:
 “How do casual riders and annual members use Cyclistic differently, and what is the best way to  convert casuals into members?”
 While the flexibility of casual rider passes help to attract new customers the key to Cyclistic’s growth and profitability is conversion to annual membership.
 By understanding the differences between casuals and members new opportunities and strategies can be found.
 
+---
+
 ## Data Sources
 The data set used in this analysis is supplied by real-world company Divvy Bikes. The data is publicly available through Motivate International Inc. under a license for non-commercial purposes.
 
 - [Data Set](https://divvy-tripdata.s3.amazonaws.com/index.html)
 - [License](https://divvybikes.com/data-license-agreement)
+
+---
 
 ## Tools Used
 - Google Cloud Storage
@@ -26,19 +34,27 @@ The data set used in this analysis is supplied by real-world company Divvy Bikes
 - Tableau
 - Google Slides
 
+---
+
 ## Data Cleaning
 Due to the large size of the dataset, the CSV files were stored in a Google Cloud Storage bucket and imported into BigQuery as a single table for SQL processing and analysis.
 
-| Field Name | Type |
-| -------- | -------- |
-| ride_id  | string  |
-| rideable_type  | string  |
-| started_at  | timestamp  |
-| ended_at  | timestamp  |
-| member_casual  | string  |
-| ride_length  | integer  |
-| day_of_week  | integer  |
-| month_of_year  | integer  |
+### Schema for Before cleaning
+| Field Name | Type | Description
+| -------- | -------- | -------- |
+| ride_id  | string  | Unique ID for each ride. |
+| rideable_type  | string  | Either classic or electric bikes. |
+| started_at  | timestamp  | Start date and time for ride. |
+| ended_at  | timestamp  | End date and time for ride |
+| start_station_name  | string  | Name of starting station if applicable. |
+| start_station_id  | string  | Unique ID for starting station. |
+| end_station_name  | string  | Name of ending station if applicable. |
+| end_station_id  | string  | Unique ID for ending station. |
+| start_lat  | float  | Starting latitude of ride. |
+| start_long  | float  | Starting longitude of ridee. |
+| end_lat  | float  | Ending latitude of ride. |
+| end_long  | float  | Ending longitude of ride. |
+| member_casual  | string  | Membership status of rider. |
 
 First I created a new table to represent a cleaned version of the original trips table in order to keep the original intact for any needed reference later. For the new table I chose to not include the fields representing location data as the nature of the bike-share service allows users to start and end rides in any location. New fields were added to calculate the duration of each trip in minutes and extract the weekday and month from each trip’s start time. Finally, the table only includes records where the start time of trips preceded the end as some records had erroneous travel times suggesting negative trip durations.
 
@@ -82,6 +98,8 @@ I opted to merge matching records together by their ID in order to include any d
 
 For my last cleaning step, I removed potential errors for trip durations. I opted to remove any trips that lasted fewer than a minute and those longer than 24 hours as these appeared unlikely to be true records.
 
+---
+
 ## Analysis
 I Used SQL within BigQuery for my analysis, saving any important queries as new tables as I went along. For visualizations, I used Tableau connected to my BigQuery database.
 
@@ -105,12 +123,24 @@ I Used SQL within BigQuery for my analysis, saving any important queries as new 
 
 ![Monthly Rides](images/MonthlyRides.png)
 
+---
+
 ## Key Findings
 - The majority of rides are form members. Annual members account for 64.75% of rides, compared to 35.25% for casual riders.
 - Casual riders prefer longer rides than members. Casual rides have a median of 11 minutes, compared to 8 minutes for annual members.
 - Ride behavior differs day to day. Weekdays are more popular with annual members while weekends are more popular with casual riders.
 - A large demographic of users commute with the service. Weekday usage aligns with the beginning and end of the work day.
 - Seasonality is important. Warmer months are when the majority of rides take place.
+
+---
+
+## Dashboard
+
+![Dashboard](images/Dashboard.png)
+
+[Tableau Public Link](https://public.tableau.com/app/profile/maverick.burdess/viz/CyclisticVisualizations_17900260634020/CyclisticBike-ShareDashboard6?publish=yes)
+
+---
 
 ## Recommendations
 - Have a promotion for casual riders using the service on Fridays, Saturdays, and Sundays. Incentivize reoccurring rides by offering free day-passes or trials for memberships. Emphasize the annual savings and physical health benefits of an annual membership.
@@ -120,7 +150,5 @@ I Used SQL within BigQuery for my analysis, saving any important queries as new 
 ## Tableau Dashboard
 
 ![Dashboard](images/Dashboard.png)
-
-## Project Files
 
 ## Conclusion
