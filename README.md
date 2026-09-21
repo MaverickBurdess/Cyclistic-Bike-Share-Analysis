@@ -13,8 +13,6 @@ Key Question:
 While the flexibility of casual rider passes help to attract new customers the key to Cyclistic’s growth and profitability is conversion to annual membership.
 By understanding the differences between casuals and members new opportunities and strategies can be found.
 
-## Stakeholders
-
 ## Data Sources
 The data used in this analysis is supplied by real-world company Divvy Bikes. The dataset is publicly available through Motivate International Inc. under a license for non-commercial purposes.
 
