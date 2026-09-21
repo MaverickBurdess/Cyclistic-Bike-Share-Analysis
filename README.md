@@ -36,7 +36,7 @@ I Used SQL within BigQuery for my analysis, saving any important queries as new 
 
 1. The majority of rides were conducted by annual members accounting for 64.75% of total rides. This is likely indicative of members riding more frequently than their casual counterparts.
 
-![Total Riders Chart](images/Total Rides by Rider Type.png)
+![Total Riders Chart](images/TotalRides.png)
 
 2. Casual riders tend to have longer rides with an average of 18.79 and a median of 11 minutes respectively. Members have an average of 11.82 and median of 8 minutes.
 3. Hourly trends show member rides prominently between 6 and 9 a.m. and 3 and 6 p.m. suggesting that they are using bikes for commuting to work. Casual riders show similar trends with an increase at the start of the work day gradually increasing until the end of the work day.
