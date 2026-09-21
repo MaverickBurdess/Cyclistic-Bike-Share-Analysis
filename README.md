@@ -14,7 +14,10 @@ While the flexibility of casual rider passes help to attract new customers the k
 By understanding the differences between casuals and members new opportunities and strategies can be found.
 
 ## Data Sources
-The data used in this analysis is supplied by real-world company Divvy Bikes. The dataset is publicly available through Motivate International Inc. under a license for non-commercial purposes.
+The data set used in this analysis is supplied by real-world company Divvy Bikes. The data is publicly available through Motivate International Inc. under a license for non-commercial purposes.
+
+[Data Set](https://divvy-tripdata.s3.amazonaws.com/index.html)
+[License](https://divvybikes.com/data-license-agreement)
 
 ## Tools Used
 - Google Cloud Storage
