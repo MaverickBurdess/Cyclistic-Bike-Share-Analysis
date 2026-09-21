@@ -36,12 +36,23 @@ I Used SQL within BigQuery for my analysis, saving any important queries as new 
 
 1. The majority of rides were conducted by annual members accounting for 64.75% of total rides. This is likely indicative of members riding more frequently than their casual counterparts.
 
-![Total Riders Chart](images/TotalRides.png)
+![Total Rides](images/TotalRides.png)
 
 2. Casual riders tend to have longer rides with an average of 18.79 and a median of 11 minutes respectively. Members have an average of 11.82 and median of 8 minutes.
+
+![Median Ride Length](images/MedianRideLength.png)
+
 3. Hourly trends show member rides prominently between 6 and 9 a.m. and 3 and 6 p.m. suggesting that they are using bikes for commuting to work. Casual riders show similar trends with an increase at the start of the work day gradually increasing until the end of the work day.
+
+![Hourly Rides](images/HourlyRides.png)
+
 4. Weekly trends show an interesting inversion of trends between members and casuals. Member usage is predominantly weekdays while used the least during weekends. Casuals however, are mainly weekend riders with a lower amount of trips during the weekday.
+
+![Weekly Rides](images/WeeklyRides.png)
+
 5. Monthly trends show that the majority of rides for both types of riders take place during the warmer summer months. Colder months see rides drop off significantly with the remaining majority of riders being annual members.
+
+![Monthly Rides](images/MonthlyRides.png)
 
 ## Key Findings
 - The majority of rides are form members. Annual members account for 64.75% of rides, compared to 35.25% for casual riders.
@@ -56,6 +67,8 @@ I Used SQL within BigQuery for my analysis, saving any important queries as new 
 - Advertise during middle to late Spring to build awareness and anticipation for peak season. Bring attention to both aspects of commuting and leisure rides during this time.
 
 ## Tableau Dashboard
+
+![Dashboard](images/Dashboard.png)
 
 ## Project Files
 
