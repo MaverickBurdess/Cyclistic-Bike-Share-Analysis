@@ -31,6 +31,27 @@ Due to the large size of the dataset, the CSV files were stored in a Google Clou
 
 First I created a new table to represent a cleaned version of the original trips table in order to keep the original intact for any needed reference later. For the new table I chose to not include the fields representing location data as the nature of the bike-share service allows users to start and end rides in any location. New fields were added to calculate the duration of each trip in minutes and extract the weekday and month from each trip’s start time. Finally, the table only included records where the start time of trips preceded the end as some records had erroneous travel times suggesting negative trip durations.
 
+```sql
+CREATE TABLE `project-c54f5612-701d-49e0-878.cyclistic.trips_cleaned` AS
+
+SELECT
+  ride_id,
+  rideable_type,
+  started_at
+  ended_at,
+  member_casual,
+
+  TIMESTAMP_DIFF(ended_at, started_at, minute) AS ride_length,
+
+  EXTRACT(DAYOFWEEK FROM started_at) AS day_of_week,
+
+  EXTRACT(MONTH FROM started_at) AS month_of_year
+
+FROM `project-c54f5612-701d-49e0-878.cyclistic.trips`
+
+WHERE ended_at > started_at
+```
+
 | Field Name | Type |
 | -------- | -------- |
 | ride_id  | string  |
