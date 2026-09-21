@@ -29,8 +29,20 @@ The data set used in this analysis is supplied by real-world company Divvy Bikes
 ## Data Cleaning
 Due to the large size of the dataset, the CSV files were stored in a Google Cloud Storage bucket and imported into BigQuery as a single table for SQL processing and analysis.
 
-First I created a new table to represent a cleaned version of the original trips table in order to keep the original intact for any needed reference later. For the new table I chose to not include the fields representing location data as the nature of the bike-share service allows users to start and end rides in any location. New fields were added to calculate the duration of each trip in minutes and extract the weekday and month from each trip’s start time. Finally, the table only included records where the start time of trips preceded the end as some records had erroneous travel times suggesting negative trip durations.
+| Field Name | Type |
+| -------- | -------- |
+| ride_id  | string  |
+| rideable_type  | string  |
+| started_at  | timestamp  |
+| ended_at  | timestamp  |
+| member_casual  | string  |
+| ride_length  | integer  |
+| day_of_week  | integer  |
+| month_of_year  | integer  |
 
+First I created a new table to represent a cleaned version of the original trips table in order to keep the original intact for any needed reference later. For the new table I chose to not include the fields representing location data as the nature of the bike-share service allows users to start and end rides in any location. New fields were added to calculate the duration of each trip in minutes and extract the weekday and month from each trip’s start time. Finally, the table only includes records where the start time of trips preceded the end as some records had erroneous travel times suggesting negative trip durations.
+
+### Cleaned Table Creation
 ```sql
 CREATE TABLE `project-c54f5612-701d-49e0-878.cyclistic.trips_cleaned` AS
 
@@ -52,18 +64,22 @@ FROM `project-c54f5612-701d-49e0-878.cyclistic.trips`
 WHERE ended_at > started_at
 ```
 
-| Field Name | Type |
-| -------- | -------- |
-| ride_id  | string  |
-| rideable_type  | string  |
-| started_at  | timestamp  |
-| ended_at  | timestamp  |
-| member_casual  | string  |
-| ride_length  | integer  |
-| day_of_week  | integer  |
-| month_of_year  | integer  |
+Next, I checked for any duplicate record entries by counting trip IDs with multiple occurrences, resulting in 35 duplicates. 
 
-Next, I checked for any duplicate records by referencing trip IDs with multiple occurrences, resulting in 35 duplicates. While at first glance the duplicate records appeared to be perfect matches, I opted to merge matching records together by their ID in order to include any data that may be missing in one or both records. The merged records were then saved in a temporary table, then inserted back into the cleaned table after their originals were removed.
+### Query for Finding Duplicates
+```sql
+SELECT *
+FROM (
+    SELECT *, 
+           COUNT(*) OVER(PARTITION BY ride_id) as total_occurrences
+    FROM `project-c54f5612-701d-49e0-878.cyclistic.trips_cleaned`
+) subquery
+WHERE total_occurrences > 1
+ORDER BY ride_id
+```
+
+I opted to merge matching records together by their ID in order to include any data that may be missing in one or both records. The merged records were then saved in a temporary table, then inserted back into the cleaned table after their originals were removed.
+
 For my last cleaning step, I removed potential errors for trip durations. I opted to remove any trips that lasted fewer than a minute and those longer than 24 hours as these appeared unlikely to be true records.
 
 ## Analysis
