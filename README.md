@@ -136,7 +136,11 @@ I Used SQL within BigQuery for my analysis, saving any important queries as new 
 
 ## Limitations
 
-A major limitation for this analysis was not having any access to rider information, identifying tourists and specific age groups could answer some lingering questions. Furthermore, distinctions between single-ride and day-pass for casual riders.  
+- Lack of information on rider demographics.
+- No distinction between single-ride and day-pass usage for casual riders.
+- Many null values for ride locations.
+
+A major limitation for this analysis was not having any access to rider information, identifying tourists and specific age groups could answer some lingering questions. Furthermore, distinctions between single-ride and day-pass for casual riders. With so many null values for station IDs perhaps a new system for identifying location
 
 ---
 
