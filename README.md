@@ -1,6 +1,5 @@
 # Cyclistic-Bike-Share-Analysis
 
----
 
 ## Project Overview
 
@@ -10,7 +9,6 @@ The goal of this analysis is to identify the differences between casual riders a
 
 The subset of data contains trips from July 2025 to June 2026, representing one full year of rider activity.
 
----
 
 ## Business Task
 
@@ -28,7 +26,6 @@ The data set used in this analysis is supplied by real-world company Divvy Bikes
 - [Data Set](https://divvy-tripdata.s3.amazonaws.com/index.html)
 - [License](https://divvybikes.com/data-license-agreement)
 
----
 
 ## Tools Used
 
