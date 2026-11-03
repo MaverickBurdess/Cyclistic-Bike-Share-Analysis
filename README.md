@@ -167,8 +167,9 @@ A major limitation for this analysis was not having any access to rider informat
 - Have a promotion for casual riders using the service on Fridays, Saturdays, and Sundays. Incentivize reoccurring rides by offering free day-passes or trials for memberships. Emphasize the annual savings and physical health benefits of an annual membership.
 - Launch an advertising campaign for commuting to and from work. Highlight how much a potential member would save annually compared to the price of single-ride passes, public transit, or personal vehicles.
 - Advertise during middle to late Spring to build awareness and anticipation for peak season. Bring attention to both aspects of commuting and leisure rides during this time.
+
 ---
 
 ## Conclusion
 
-This analysis shows that Cyclistic's casual riders and annual members represent two distinct user bases, not just two pricing tiers. Members ride more often on weekdays for shorter, commute-like trips, while casual riders favor longer, weekend-oriented rides — a pattern that directly shapes how conversion efforts should be targeted, from weekend promotions to commuter-focused messaging timed ahead of peak season.
+This analysis shows that Cyclistic annual members and casual riders are not just two pricing models but two distinct usage patterns. Members tend to take shorter, commute-like trips during the weekdays, while casual riders favor longer weekend trips, especiallialy in the warmer months. Conversion strategies should include weekend promotions, commuter-focused advertising, and spring campaigns ahead of peak season.
