@@ -17,7 +17,6 @@ Key Question:
 While the flexibility of casual rider passes helps to attract new customers, the key to Cyclistic’s growth and profitability is conversion to annual membership.
 By understanding the differences between casuals and members new opportunities and strategies can be found.
 
----
 
 ## Data Sources
 
@@ -35,7 +34,6 @@ The data set used in this analysis is supplied by real-world company Divvy Bikes
 - Tableau
 - Google Slides
 
----
 
 ## Data Cleaning
 
@@ -103,7 +101,6 @@ I opted to merge matching records together by their ID in order to include any d
 
 For my last cleaning step, I removed potential errors for trip durations. I opted to remove any trips that lasted fewer than ne minute and those longer than twenty-four hours as these appeared unlikely to be true records. Extremely short trips may reflect riders changing their minds while extremely long rides may be the result of bike theft, both are outside the scope of this analysis.
 
----
 
 ## Analysis
 
@@ -129,7 +126,6 @@ I Used SQL within BigQuery for my analysis, saving any important queries as new 
 
 ![Monthly Rides](images/MonthlyRides.png)
 
----
 
 ## Limitations
 
@@ -139,7 +135,6 @@ I Used SQL within BigQuery for my analysis, saving any important queries as new 
 
 A major limitation for this analysis was not having any access to rider information, identifying tourists and specific age groups could answer some lingering questions. Furthermore, distinctions between single-ride and day-pass for casual riders. With so many null values for station IDs perhaps a new system for identifying location
 
----
 
 ## Key Findings
 
@@ -149,7 +144,6 @@ A major limitation for this analysis was not having any access to rider informat
 - A large demographic of users commute with the service. Weekday usage aligns with the beginning and end of the work day.
 - Seasonality is important. Warmer months are when the majority of rides take place.
 
----
 
 ## Tableau Dashboard
 
@@ -157,7 +151,6 @@ A major limitation for this analysis was not having any access to rider informat
 
 [Tableau Public Link](https://public.tableau.com/app/profile/maverick.burdess/viz/CyclisticVisualizations_17900260634020/CyclisticBike-ShareDashboard6?publish=yes)
 
----
 
 ## Recommendations
 
@@ -165,7 +158,6 @@ A major limitation for this analysis was not having any access to rider informat
 - Launch an advertising campaign for commuting to and from work. Highlight how much a potential member would save annually compared to the price of single-ride passes, public transit, or personal vehicles.
 - Advertise during middle to late Spring to build awareness and anticipation for peak season. Bring attention to both aspects of commuting and leisure rides during this time.
 
----
 
 ## Conclusion
 
